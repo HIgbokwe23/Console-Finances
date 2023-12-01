@@ -7,9 +7,9 @@ I have used JavaScript to write code that will analyze the financial records of 
 
 Deployed on GitHub Pages
 
-[This is the link to my webpage]
+[This is the link to my webpage] https://higbokwe23.github.io/Console-Finances/
 
-[This is the link to my git hub repo]
+[This is the link to my git hub repo] https://github.com/HIgbokwe23/Console-Finances
 
 ## Usage
 
