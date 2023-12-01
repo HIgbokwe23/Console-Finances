@@ -89,15 +89,76 @@ var finances = [
 
 
 //Total months
+var totalMonths = finances.length
+var total = 0
+var change = 0
+var average;
+var analysisDisplay;
+var net = 0
+var netArray =[]
+var netChangeSum = 0
+var decrease = ['',9999999999999]
+var greatest = ['', 0]
+
 console.log("Total months = " + finances.length)
 
 //Total profit-loss
 var sum = 0
 
 for (var i=0; i<finances.length; i++){
-  sum = sum + finances[i][1]
-  } console.log("Total profit-loss =" + sum)
+  console.log(finances)
+  console.log(finances[i])
 
+  for (let j = 0; j < finances[i].length; j++) {
+    console.log(finances[i][j])
+   // const element = array[j];
+    if (typeof finances[i][j] !== 'string') {
+      total += finances[i][j]
+      console.log(total)
+      change = finances[i][j] - net
+      console.log(net)
+      console.log(change)
+      net = finances[i][j] 
+      console.log(net)
+      netArray.push(change)
+      console.log(netArray)
+      if (change > greatest[1]){
+        greatest = [finances[i][0], finances[i][1]]
+      }
+      if (change < decrease[1]){
+        decrease = [finances[i][0], finances[i][1]]  
+      }
+    } 
+  }
+  
+ // sum = sum + finances[i][1]
+  } //console.log("Total profit-loss =" + sum)
+for (let i = 0; i < netArray.length; i++) {
+  netChangeSum += netArray[i];
+  console.log(netArray)
+  console.log(netChangeSum)
+}
+average = Math.round((netChangeSum/86)*100)/100
+
+
+
+// use analysis display to create the entire display per the README
+analysisDisplay = ""
+
+
+
+console.log(analysisDisplay)
+
+// identify the area on the HTML and declare that in JS and then use display method called text content (w3 schools)
+var display = document.getElementById("display")
+
+display.textContent = analysisDisplay
+
+
+
+
+
+  
 //Average Change
 
 /*let firstNumber = finances[0][1];
